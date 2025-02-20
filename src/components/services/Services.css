@@ -1,0 +1,48 @@
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  justify-content: center;
+  width: 80vw;
+  padding-top: 80px;
+}
+
+.serviceTitle {
+  position: relative;
+  text-align: center;
+}
+
+.serviceTitle h2 {
+  font-size: 50px;
+}
+
+.serviceTitle img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 130px;
+  z-index: -1;
+}
+
+.serviceProvide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 800px) {
+  .service {
+    width: 90vw;
+  }
+
+  .serviceTitle img {
+    width: 110px;
+  }
+
+  .serviceTitle h2 {
+    font-size: 40px;
+  }
+}

@@ -1,0 +1,42 @@
+.serviceCard {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  gap: 8px;
+  transition: 0.5s ease;
+}
+
+.serviceCard:hover {
+  background: linear-gradient(26deg, #da7c25 60%, #b923e1 92.06%);
+  transform: scale(1.05);
+}
+
+.index {
+  font-size: 18px;
+}
+
+.title {
+  font-size: 22px;
+  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content {
+  font-size: 15px;
+}
+
+.readMore {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .serviceCard {
+    width: 330px;
+  }
+}

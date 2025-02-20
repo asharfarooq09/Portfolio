@@ -1,0 +1,44 @@
+.portfolio {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 80px;
+  gap: 40px;
+}
+
+.portfolioTitle {
+  position: relative;
+}
+
+.portfolioTitle img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 130px;
+  z-index: -1;
+}
+
+.portfolioTitle h2 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.portfolioDetail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .portfolio {
+    width: 90vw;
+  }
+
+  .portfolioTitle h2 {
+    font-size: 40px;
+  }
+}

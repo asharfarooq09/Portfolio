@@ -1,0 +1,62 @@
+.hero {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding-top: 80px;
+}
+
+.heroImg {
+  height: 210px;
+  width: 210px;
+}
+
+.heroTitle {
+  font-size: 40px;
+  text-align: center;
+}
+
+.heroTitle span {
+  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroDetail {
+  font-size: 17px;
+  text-align: center;
+}
+
+.heroBtn {
+  display: flex;
+  gap: 20px;
+  font-size: 24px;
+}
+
+.connectMe {
+  cursor: pointer;
+  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
+  padding: 13px 17px;
+  width: 142px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  color: #fff;
+}
+
+.myResume {
+  cursor: pointer;
+  background: transparent;
+  width: 142px;
+  padding: 13px 17px;
+  border: 1px solid #b923e1;
+  outline: none;
+  border-radius: 30px;
+  color: #fff;
+}
+@media screen and (max-width: 800px) {
+  .hero {
+    width: 90vw;
+  }
+}

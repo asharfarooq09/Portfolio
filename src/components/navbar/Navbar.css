@@ -1,0 +1,146 @@
+.navbar {
+  width: 80vw;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: transparent;
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+  background: #161513;
+}
+
+.navMenu {
+  display: none;
+  width: 22px;
+  height: 35px;
+}
+
+li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navLogo .logo {
+  font-size: 36px;
+  font-family: "Rubik Vinyl";
+}
+
+.navList {
+  cursor: pointer;
+  display: flex;
+  color: #fff;
+  list-style: none;
+  gap: 50px;
+  font-size: 16px;
+}
+
+.navButton {
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 25px;
+  color: #fff;
+  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.sideDrawer {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 250px;
+  height: 100vh;
+  background-color: #222;
+  color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  padding: 20px;
+  text-align: center;
+  transition: 0.5s ease;
+  animation: slide-in 0.3s ease forwards;
+}
+
+.close {
+  animation: slide-out 0.3s ease forwards;
+}
+
+@keyframes slide-in {
+  100% {
+    left: 0;
+  }
+}
+@keyframes slide-out {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -300px;
+  }
+}
+
+.sideDrawer .open {
+  left: -200px;
+}
+.sideDrawer .close {
+  left: -300px;
+}
+
+.drawerList {
+  list-style: none;
+  padding: 0;
+}
+
+.drawerList li {
+  margin: 20px 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+@media screen and (max-width: 1000px) {
+  .navList {
+    display: none;
+  }
+
+  .navMenu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    width: 90vw;
+  }
+
+  .navLogo {
+    gap: 10px;
+  }
+  .navLogo .logo {
+    font-size: 30px;
+  }
+  .navButton {
+    font-size: 12px;
+    padding: 10px;
+  }
+}

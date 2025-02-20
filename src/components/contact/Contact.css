@@ -1,0 +1,128 @@
+.contact {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 80px 0 40px 0;
+  gap: 40px;
+}
+
+.contactTitle {
+  position: relative;
+}
+
+.contactTitle h2 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.contactTitle img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 130px;
+  z-index: -1;
+}
+
+.contactDetail {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.detailLeft {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 220px;
+}
+
+.detailLeft h3 {
+  font-size: 30px;
+  margin-bottom: 6px;
+  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.detailLeft .description {
+  font-size: 14px;
+}
+
+.gmail,
+.number,
+.address {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  height: 30px;
+}
+
+.gmailLogo {
+  font-size: 21px;
+  height: 30px;
+}
+
+.gmail,
+.number,
+.address p {
+  font-size: 14px;
+}
+
+.detailRight {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 320px;
+}
+
+.detail p {
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.detail .input {
+  width: 95%;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  padding: 10px 8px;
+  border-radius: 4px;
+  resize: none;
+  color: #fff;
+  background: rgb(65, 63, 63);
+}
+
+.submit {
+  width: 110px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 500;
+  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  .contact {
+    width: 90vw;
+  }
+
+  .contactTitle h2 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .detail .input {
+    width: 100%;
+  }
+}

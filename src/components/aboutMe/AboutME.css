@@ -1,0 +1,158 @@
+.aboutMe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80vw;
+  gap: 40px;
+  padding-top: 80px;
+}
+
+.aboutTitle {
+  position: relative;
+}
+
+.aboutTitle h2 {
+  font-size: 50px;
+}
+
+.aboutTitle img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 130px;
+  z-index: -1;
+}
+
+.aboutDetail {
+  display: flex;
+  gap: 30px;
+}
+
+.aboutDetail .detailsLeft {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.detailsLeft .img {
+  width: 250px;
+  border-radius: 20px;
+}
+
+.aboutDetail .detailsRight {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  gap: 30px;
+  min-width: 300px;
+}
+
+.detailPara {
+  font-size: 16px;
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+}
+
+.detailSkills {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detailSkill {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: 0.4s ease;
+}
+
+.detailSkill:hover {
+  transform: scale(1.03);
+}
+
+.detailSkill hr {
+  height: 6px;
+  border-radius: 20px;
+  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
+  border: none;
+}
+
+.detailSkill p {
+  min-width: 120px;
+}
+
+.aboutExperience {
+  display: flex;
+  gap: 60px;
+}
+
+.experience,
+.projects,
+.clients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.experience .number {
+  font-size: 30px;
+  font-weight: 600;
+  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 5px;
+}
+
+.projects .number {
+  font-size: 30px;
+  font-weight: 600;
+  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 5px;
+}
+
+.clients .number {
+  font-size: 30px;
+  font-weight: 600;
+  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 5px;
+}
+
+.experience,
+.projects,
+.clients .para {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 800px) {
+  .aboutMe {
+    width: 90vw;
+  }
+
+  .aboutTitle h2 {
+    font-size: 40px;
+  }
+
+  .aboutTitle img {
+    width: 110px;
+  }
+
+  .aboutDetail {
+    flex-wrap: wrap;
+  }
+
+  .aboutExperience {
+    gap: 25px;
+  }
+
+  .detailSkill p {
+    min-width: 90px;
+  }
+}

@@ -1,0 +1,92 @@
+.footerContainer {
+  background: black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0 15px 0;
+}
+
+.footer {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footerUpper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerLeft .footerLogo {
+  font-size: 36px;
+  font-family: "Rubik Vinyl";
+}
+
+.footerLeft p {
+  font-size: 14px;
+}
+
+.footerRight {
+  display: flex;
+  gap: 20px;
+}
+
+.footerRight input {
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+}
+
+.footerRight button {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
+  outline: none;
+}
+
+.rights {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.ploicies {
+  display: flex;
+  gap: 20px;
+  
+}
+
+@media screen and (max-width: 800px) {
+  .footer {
+    width: 90%;
+  }
+  .footerLogo{
+    font-size: 30px;
+  }
+}
+
+
+@media screen and (max-width: 520px) {
+  .footerUpper{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .rights{
+    gap: 10px;
+    font-size: 12px;
+  }
+}
