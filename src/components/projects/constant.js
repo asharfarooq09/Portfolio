@@ -1,4 +1,4 @@
-import Shopper from "../../assets/Shopper.png";
+import Shopper from "../../assets/shopper.png";
 import CRM from "../../assets/CRM.png";
 import newspaperApp from "../../assets/newspaperApp.png";
 
