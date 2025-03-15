@@ -65,27 +65,25 @@
 .ploicies {
   display: flex;
   gap: 20px;
-  
 }
 
 @media screen and (max-width: 800px) {
   .footer {
     width: 90%;
   }
-  .footerLogo{
+  .footerLogo {
     font-size: 30px;
   }
 }
 
-
 @media screen and (max-width: 520px) {
-  .footerUpper{
+  .footerUpper {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
   }
 
-  .rights{
+  .rights {
     gap: 10px;
     font-size: 12px;
   }

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import "./App.css";
 import AboutMe from "./components/aboutMe/AboutMe";
 import Contact from "./components/contact/Contact";

@@ -1,6 +1,6 @@
 import React from "react";
 import theme from "../../assets/theme_pattern.svg";
-import profile from "../../assets/about_profile.svg";
+import Portfolio_image from "../../assets/Portfolio_image.jpeg";
 import "./AboutMe.css";
 import { skills } from "./constant";
 import {Allprojects} from "../projects/constant.js"
@@ -14,7 +14,7 @@ const AboutMe = () => {
       </div>
       <div className="aboutDetail">
         <div className="detailsLeft">
-          <img className="img" src={profile} alt="" />
+          <img className="img" src={Portfolio_image} alt="" />
         </div>
         <div className="detailsRight">
           <div className="detailPara">

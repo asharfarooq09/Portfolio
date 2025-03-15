@@ -1,7 +1,7 @@
 import React from "react";
 import "./Hero.css";
-import image from "../../assets/profile_img.svg";
 import resume from "../../assets/Ashar_Resume.pdf";
+import Profile_image from "../../assets/Portfolio_image.jpeg";
 
 const Hero = ({ sections }) => {
   const handleResumeClick = () => {
@@ -16,7 +16,7 @@ const Hero = ({ sections }) => {
 
   return (
     <div className="hero">
-      <img src={image} alt="" className="heroImg" />
+      <img src={Profile_image} alt="" className="heroImg" />
       <h2 className="heroTitle">
         <span>I'm Ashar Farooq </span>, frontend developer based on India.
       </h2>

@@ -3,7 +3,6 @@ import { menuOptions } from "./constant";
 import "./Navbar.css";
 
 export const Sidebar = ({ menuRef, handleSidebarClose, sections }) => {
-  
   const scrollToSection = (id) => {
     if (sections[id] && sections[id].current) {
       sections[id].current.scrollIntoView({ behavior: "smooth" });

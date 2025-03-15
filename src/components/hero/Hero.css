@@ -8,8 +8,10 @@
 }
 
 .heroImg {
+  border-radius: 50%;
   height: 210px;
   width: 210px;
+  object-fit: cover;
 }
 
 .heroTitle {

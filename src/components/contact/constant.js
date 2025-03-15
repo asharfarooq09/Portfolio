@@ -7,7 +7,3 @@ export const contactDetail = [
   {logo:   MdDialerSip, detail:"7599942225"},
   {logo:   FaLocationDot, detail:"Amroha, Uttar Predesh"},
 ]
-
-export const formDetails = [
-  
-]
