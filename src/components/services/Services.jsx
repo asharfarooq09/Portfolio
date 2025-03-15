@@ -13,12 +13,15 @@ const Services = () => {
       <div className="serviceProvide">
         {[
           "Web Design",
-          "Graphic Design",
-          "Social Media",
+          "Web Development",
+          "E-commerce Development",
+          "API Development & Integration",
+          "SEO & Performance Optimization",
+          "UI/UX Design Implementation",
+          "Website Maintenance",
           "App Design",
-          "Digital MArketing",
-          "Content Writing",
-        ].map((title, index) => {  return <ServiceCard key={index} title={title} index={index}/>
+        ].map((title, index) => {
+          return <ServiceCard key={index} title={title} index={index} />;
         })}
       </div>
     </div>

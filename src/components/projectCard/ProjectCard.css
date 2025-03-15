@@ -1,0 +1,28 @@
+.ProjectCard {
+  width: 280px;
+  border-radius: 10px;
+  transition: 0.4s ease;
+  padding: 2px;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.ProjectCard img {
+  width: 99%;
+  height: 99%;
+  object-fit: fill;
+}
+
+.ProjectCard:hover {
+  transform: scale(1.05);
+  border: 1px solid #b923e1;
+}
+
+@media screen and (max-width: 800px) {
+  .ProjectCard {
+    width: 330px;
+  }
+}

@@ -1,18 +1,18 @@
-.portfolio {
+.projects {
+  cursor: pointer;
   width: 80vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-top: 80px;
   gap: 40px;
 }
 
-.portfolioTitle {
+.projectsTitle {
   position: relative;
 }
 
-.portfolioTitle img {
+.projectsTitle img {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -20,12 +20,12 @@
   z-index: -1;
 }
 
-.portfolioTitle h2 {
+.projectsTitle h2 {
   text-align: center;
   font-size: 50px;
 }
 
-.portfolioDetail {
+.projectsDetail {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,11 +34,11 @@
 }
 
 @media screen and (max-width: 800px) {
-  .portfolio {
+  .projects {
     width: 90vw;
   }
 
-  .portfolioTitle h2 {
+  .projectsTitle h2 {
     font-size: 40px;
   }
 }

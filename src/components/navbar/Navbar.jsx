@@ -12,35 +12,52 @@ const Navbar = ({ sections }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const scrollToSection = (id) => {
-    if (sections[id] && sections[id].current) {
-      sections[id].current.scrollIntoView({ behavior: "smooth" });
+    if (id && sections[id].current) {
+      sections[id].current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
     handleSidebarClose();
   };
 
   return (
     <>
-      <div className={`navbar ${scrolled ? "scrolled" : ""}`}>
-        <div className="navLogo">
-          <RxHamburgerMenu onClick={handleSidebarOpen} className="navMenu" />
-          <p className="logo">Ashar</p>
+      <div className="navContainer">
+        <div className={`navbar ${scrolled ? "scrolled" : ""}`}>
+          <div className="navLogo">
+            <RxHamburgerMenu onClick={handleSidebarOpen} className="navMenu" />
+            <p className="logo">Ashar</p>
+          </div>
+          <ul className="navList">
+            {menuOptions.map((menuItem, index) => (
+              <li key={index} onClick={() => scrollToSection(menuItem.id)}>
+                {menuItem.name}
+              </li>
+            ))}
+          </ul>
+          <button
+            className="navButton"
+            onClick={() => scrollToSection("contact")}
+          >
+            Connect With Me
+          </button>
         </div>
-        <ul className="navList">
-          {menuOptions.map((menuItem, index) => (
-            <li key={index} onClick={() => scrollToSection(menuItem.id)}>
-              {menuItem.name}
-            </li>
-          ))}
-        </ul>
-        <button className="navButton">Connect With Me</button>
       </div>
 
       {menu && (

@@ -5,7 +5,6 @@
   flex-direction: column;
   width: 80vw;
   gap: 40px;
-  padding-top: 80px;
 }
 
 .aboutTitle {
@@ -56,6 +55,7 @@
 }
 
 .detailSkills {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -63,6 +63,7 @@
 
 .detailSkill {
   display: flex;
+  width: 100%;
   gap: 20px;
   align-items: center;
   transition: 0.4s ease;
@@ -73,6 +74,7 @@
 }
 
 .detailSkill hr {
+
   height: 6px;
   border-radius: 20px;
   background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
@@ -89,7 +91,7 @@
 }
 
 .experience,
-.projects,
+.totalProjects,
 .clients {
   display: flex;
   flex-direction: column;
@@ -107,7 +109,7 @@
   margin-bottom: 5px;
 }
 
-.projects .number {
+.totalProjects .number {
   font-size: 30px;
   font-weight: 600;
   background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
@@ -126,7 +128,7 @@
 }
 
 .experience,
-.projects,
+.totalProjects,
 .clients .para {
   font-size: 14px;
 }

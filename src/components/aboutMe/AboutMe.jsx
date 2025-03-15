@@ -1,7 +1,9 @@
 import React from "react";
 import theme from "../../assets/theme_pattern.svg";
 import profile from "../../assets/about_profile.svg";
-import "./AboutME.css";
+import "./AboutMe.css";
+import { skills } from "./constant";
+import {Allprojects} from "../projects/constant.js"
 
 const AboutMe = () => {
   return (
@@ -28,18 +30,13 @@ const AboutMe = () => {
             </p>
           </div>
           <div className="detailSkills">
-            <div className="detailSkill">
-              <p>HTML & CSS</p> <hr style={{ width: "50%" }}></hr>
-            </div>
-            <div className="detailSkill">
-              <p>JAVASCRIPT</p> <hr style={{ width: "70%" }}></hr>
-            </div>
-            <div className="detailSkill">
-              <p>REACTJS</p> <hr style={{ width: "50%" }}></hr>
-            </div>
-            <div className="detailSkill">
-              <p>REDUX</p> <hr style={{ width: "50%" }}></hr>
-            </div>
+            {skills.map((s, index) => {
+              return (
+                <div className="detailSkill" key={index}>
+                  <p>{s.skill}</p> <hr style={{ width: s.rating }}></hr>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -49,8 +46,8 @@ const AboutMe = () => {
           <p className="para">YEARS OF EXPERIENCE</p>
         </div>
         <hr />
-        <div className="projects">
-          <p className="number">10+</p>
+        <div className="totalProjects">
+          <p className="number">{Allprojects.length}</p>
           <p className="para">PROJECTS COMPLETED</p>
         </div>
         <hr />
