@@ -1,9 +1,8 @@
-import React from "react";
 import theme from "../../assets/theme_pattern.svg";
 import Portfolio_image from "../../assets/Portfolio_image.jpeg";
 import "./AboutME.css";
 import { skills } from "./constant";
-import {Allprojects} from "../projects/constant.js"
+import { Allprojects } from "../projects/constant.js";
 
 const AboutMe = () => {
   return (
