@@ -1,62 +1,79 @@
-import theme from "../../assets/theme_pattern.svg";
+import { motion } from "framer-motion";
 import Portfolio_image from "../../assets/Portfolio_image.jpeg";
-import "./AboutME.css";
+import SectionTitle from "../common/SectionTitle";
+import AnimatedSection from "../common/AnimatedSection";
+import { siteConfig } from "../../data/site";
 import { skills } from "./constant";
-import { Allprojects } from "../projects/constant.js";
+import "./AboutME.css";
 
-const AboutMe = () => {
-  return (
-    <div className="aboutMe">
-      <div className="aboutTitle">
-        <h2>About Me</h2>
-        <img src={theme} alt="" />
-      </div>
-      <div className="aboutDetail">
-        <div className="detailsLeft">
-          <img className="img" src={Portfolio_image} alt="" />
-        </div>
-        <div className="detailsRight">
-          <div className="detailPara">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
-              fugit porro odit architecto! Reprehenderit exercitationem dicta
-              sed ad suscipit perspiciatis est velit quasi, cupiditate magni.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Recusandae dolores voluptatem exercitationem pariatur assumenda
-              minima.
-            </p>
-          </div>
-          <div className="detailSkills">
-            {skills.map((s, index) => {
-              return (
-                <div className="detailSkill" key={index}>
-                  <p>{s.skill}</p> <hr style={{ width: s.rating }}></hr>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-      <div className="aboutExperience">
-        <div className="experience">
-          <p className="number">10+</p>
-          <p className="para">YEARS OF EXPERIENCE</p>
-        </div>
-        <hr />
-        <div className="totalProjects">
-          <p className="number">{Allprojects.length}</p>
-          <p className="para">PROJECTS COMPLETED</p>
-        </div>
-        <hr />
-        <div className="clients">
-          <p className="number">10+</p>
-          <p className="para">HAPPY CLIENTS</p>
-        </div>
-      </div>
+const SkillBar = ({ skill, rating, index }) => (
+  <motion.div
+    className="skill"
+    initial={{ opacity: 0, x: -20 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: index * 0.08, duration: 0.4 }}
+  >
+    <div className="skill__header">
+      <span className="skill__name">{skill}</span>
+      <span className="skill__percent">{rating}%</span>
     </div>
-  );
-};
+    <div className="skill__track">
+      <motion.div
+        className="skill__fill"
+        initial={{ width: 0 }}
+        whileInView={{ width: `${rating}%` }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.08 + 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      />
+    </div>
+  </motion.div>
+);
+
+const AboutMe = () => (
+  <div className="about">
+    <SectionTitle subtitle="Who I am">About Me</SectionTitle>
+
+    <div className="about__grid">
+      <AnimatedSection className="about__image-col">
+        <div className="about__image-frame">
+          <img
+            src={Portfolio_image}
+            alt={`${siteConfig.name} working`}
+            className="about__image"
+            loading="lazy"
+            width={320}
+            height={400}
+          />
+          <div className="about__image-accent" />
+        </div>
+      </AnimatedSection>
+
+      <AnimatedSection className="about__content" delay={0.1}>
+        <div className="about__text">
+          {siteConfig.bio.map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
+          ))}
+        </div>
+
+        <div className="about__skills">
+          {skills.map((s, i) => (
+            <SkillBar key={s.skill} skill={s.skill} rating={s.rating} index={i} />
+          ))}
+        </div>
+      </AnimatedSection>
+    </div>
+
+    <AnimatedSection className="about__stats" delay={0.15}>
+      {siteConfig.stats.map((stat, i) => (
+        <div key={stat.label} className="about__stat">
+          {i > 0 && <div className="about__stat-divider" />}
+          <span className="about__stat-value accent-text">{stat.value}</span>
+          <span className="about__stat-label">{stat.label}</span>
+        </div>
+      ))}
+    </AnimatedSection>
+  </div>
+);
 
 export default AboutMe;

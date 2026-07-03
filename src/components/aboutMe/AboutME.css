@@ -1,160 +1,154 @@
-.aboutMe {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 80vw;
-  gap: 40px;
+.about {
+  width: 100%;
 }
 
-.aboutTitle {
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.about__image-frame {
   position: relative;
+  width: fit-content;
+  margin: 0 auto;
 }
 
-.aboutTitle h2 {
-  font-size: 50px;
+.about__image {
+  width: 280px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
 }
 
-.aboutTitle img {
+.about__image-accent {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 130px;
-  z-index: -1;
+  inset: 12px -12px -12px 12px;
+  border-radius: var(--radius-lg);
+  background: var(--accent-muted);
+  border: 1px solid var(--border);
+  z-index: 0;
 }
 
-.aboutDetail {
-  display: flex;
-  gap: 30px;
-}
-
-.aboutDetail .detailsLeft {
-  display: flex;
-  justify-content: center;
-  flex: 1;
-}
-
-.detailsLeft .img {
-  width: 250px;
-  border-radius: 20px;
-}
-
-.aboutDetail .detailsRight {
-  display: flex;
-  flex: 2;
-  flex-direction: column;
-  gap: 30px;
-  min-width: 300px;
-}
-
-.detailPara {
-  font-size: 16px;
-  display: flex;
-  gap: 12px;
-  flex-direction: column;
-}
-
-.detailSkills {
-  width: 100%;
+.about__content {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 2rem;
 }
 
-.detailSkill {
+.about__text {
   display: flex;
-  width: 100%;
-  gap: 20px;
-  align-items: center;
-  transition: 0.4s ease;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
-.detailSkill:hover {
-  transform: scale(1.03);
+.about__skills {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
-.detailSkill hr {
+.skill__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
 
+.skill__name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.skill__percent {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.skill__track {
   height: 6px;
-  border-radius: 20px;
-  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
-  border: none;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-full);
+  overflow: hidden;
 }
 
-.detailSkill p {
+.skill__fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: var(--radius-full);
+}
+
+.about__stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 3rem;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.about__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
   min-width: 120px;
 }
 
-.aboutExperience {
-  display: flex;
-  gap: 60px;
+.about__stat-divider {
+  display: none;
 }
 
-.experience,
-.totalProjects,
-.clients {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.about__stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-.experience .number {
-  font-size: 30px;
-  font-weight: 600;
-  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 5px;
+.about__stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.25rem;
 }
 
-.totalProjects .number {
-  font-size: 30px;
-  font-weight: 600;
-  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 5px;
-}
-
-.clients .number {
-  font-size: 30px;
-  font-weight: 600;
-  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 5px;
-}
-
-.experience,
-.totalProjects,
-.clients .para {
-  font-size: 14px;
-}
-
-@media screen and (max-width: 800px) {
-  .aboutMe {
-    width: 90vw;
+@media (min-width: 768px) {
+  .about__grid {
+    grid-template-columns: 1fr 1.6fr;
+    gap: 4rem;
   }
 
-  .aboutTitle h2 {
-    font-size: 40px;
+  .about__image-frame {
+    margin: 0;
   }
 
-  .aboutTitle img {
-    width: 110px;
+  .about__image {
+    width: 320px;
   }
 
-  .aboutDetail {
-    flex-wrap: wrap;
+  .about__stats {
+    justify-content: space-around;
+    gap: 0;
   }
 
-  .aboutExperience {
-    gap: 25px;
-  }
-
-  .detailSkill p {
-    min-width: 90px;
+  .about__stat-divider {
+    display: block;
+    position: absolute;
+    left: -1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 40px;
+    background: var(--border);
   }
 }

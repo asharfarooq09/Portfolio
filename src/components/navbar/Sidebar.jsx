@@ -1,21 +1,23 @@
-import React from "react";
 import { menuOptions } from "./constant";
 import "./Navbar.css";
 
-export const Sidebar = ({ menuRef, handleSidebarClose, sections }) => {
+export const Sidebar = ({ menuRef, handleSidebarClose, sections, activeSection }) => {
   const scrollToSection = (id) => {
-    if (sections[id] && sections[id].current) {
-      sections[id].current.scrollIntoView({ behavior: "smooth" });
-    }
+    sections[id]?.current?.scrollIntoView({ behavior: "smooth" });
     handleSidebarClose();
   };
 
   return (
-    <div ref={menuRef} className="sideDrawer open">
-      <ul className="drawerList">
-        {menuOptions.map((menuItem, index) => (
-          <li key={index} onClick={() => scrollToSection(menuItem.id)}>
-            {menuItem.name}
+    <div ref={menuRef} className="side-drawer open">
+      <ul className="drawer-list">
+        {menuOptions.map((item) => (
+          <li key={item.id}>
+            <button
+              className={activeSection === item.id ? "active" : ""}
+              onClick={() => scrollToSection(item.id)}
+            >
+              {item.name}
+            </button>
           </li>
         ))}
       </ul>

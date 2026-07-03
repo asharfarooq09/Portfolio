@@ -1,7 +1,7 @@
 export const skills = [
-  { skill:"HTML & CSS",rating:"50%" },
-  { skill:"JAVASCRIPT",rating:"70%" },
-  { skill:"REACTJS",rating:"65%" },
-  { skill:"REDUX",rating:"50%" },
-  { skill:"FIREBASE",rating:"60%" },
-]
+  { skill: "React.js & TypeScript", rating: 90 },
+  { skill: "Storybook & Design Tokens", rating: 88 },
+  { skill: "Design Systems", rating: 90 },
+  { skill: "Node.js & REST APIs", rating: 78 },
+  { skill: "Accessibility (WCAG)", rating: 82 },
+];

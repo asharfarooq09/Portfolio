@@ -1,14 +1,12 @@
-import React, { useState } from "react";
-import theme from "../../assets/theme_pattern.svg";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import SectionTitle from "../common/SectionTitle";
+import AnimatedSection from "../common/AnimatedSection";
 import "./Contact.css";
 import { contactDetail } from "./constant";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -29,13 +27,13 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        setStatus("Message sent successfully!");
+        setStatus("success");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        setStatus("Failed to send message. Try again later.");
+        setStatus("error");
       }
-    } catch (error) {
-      setStatus("An error occurred. Please try again.");
+    } catch {
+      setStatus("error");
     } finally {
       setLoading(false);
     }
@@ -43,72 +41,102 @@ const Contact = () => {
 
   return (
     <div className="contact">
-      <div className="contactTitle">
-        <h2>Get in touch</h2>
-        <img src={theme} alt="Theme Pattern" />
-      </div>
-      <div className="contactDetail">
-        <div className="detailLeft">
-          <h3>Let's talk</h3>
-          <p className="description">
-            I am currently available to take on new projects, so feel free to
-            send a message about anything that you want me to work on.
+      <SectionTitle subtitle="Reach out">Get in Touch</SectionTitle>
+
+      <div className="contact__grid">
+        <AnimatedSection className="contact__info">
+          <h3 className="contact__heading accent-text">Let&apos;s talk</h3>
+          <p className="contact__description">
+            I&apos;m open to discussing new projects, collaborations, and full-time
+            opportunities. Whether you have a question about design systems or want
+            to work together — I&apos;ll get back to you as soon as possible.
           </p>
-          {contactDetail.map((d, i) => (
-            <div className="gmail" key={i}>
-              <d.logo className="logo" />
-              <p>{d.detail}</p>
+          <ul className="contact__details">
+            {contactDetail.map((item, i) => {
+              const Icon = item.logo;
+              const content = (
+                <>
+                  <Icon className="contact__icon" aria-hidden="true" />
+                  <span>{item.detail}</span>
+                </>
+              );
+              return (
+                <li key={i}>
+                  {item.href ? (
+                    <a href={item.href} className="contact__detail">
+                      {content}
+                    </a>
+                  ) : (
+                    <div className="contact__detail">{content}</div>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </AnimatedSection>
+
+        <AnimatedSection className="contact__form-wrap" delay={0.1}>
+          <form className="contact__form" onSubmit={handleSubmit}>
+            <div className="contact__field">
+              <label htmlFor="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="John Doe"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
             </div>
-          ))}
-        </div>
-        <form className="detailRight" onSubmit={handleSubmit}>
-          <div className="detail">
-            <label htmlFor="name">Your Name</label>
-            <input
-              className="input"
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Enter your name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
 
-          <div className="detail">
-            <label htmlFor="email">Your Email</label>
-            <input
-              className="input"
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
+            <div className="contact__field">
+              <label htmlFor="email">Your Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="john@example.com"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-          <div className="detail">
-            <label htmlFor="message">Write your message here</label>
-            <textarea
-              className="textarea"
-              id="message"
-              name="message"
-              rows={6}
-              placeholder="Enter message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            />
-          </div>
+            <div className="contact__field">
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows={5}
+                placeholder="Tell me about your project..."
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-          <button className="submit" type="submit" disabled={loading}>
-            {loading ? "Sending..." : "Submit"}
-          </button>
-          {status && <p className="statusMessage">{status}</p>}
-        </form>
+            <motion.button
+              className="btn btn--primary contact__submit"
+              type="submit"
+              disabled={loading}
+              whileTap={{ scale: 0.97 }}
+            >
+              {loading ? "Sending..." : "Send Message"}
+            </motion.button>
+
+            {status === "success" && (
+              <p className="contact__status contact__status--success" role="status">
+                Message sent successfully! I&apos;ll be in touch soon.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="contact__status contact__status--error" role="alert">
+                Something went wrong. Please try again later.
+              </p>
+            )}
+          </form>
+        </AnimatedSection>
       </div>
     </div>
   );

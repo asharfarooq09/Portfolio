@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { motion, AnimatePresence } from "framer-motion";
 import useSidebarAnimation from "../../hooks/useSidebarAnimation";
+import useActiveSection from "../../hooks/useActiveSection";
+import { siteConfig } from "../../data/site";
 import "./Navbar.css";
 import { Sidebar } from "./Sidebar";
 import { menuOptions } from "./constant";
@@ -9,67 +12,88 @@ const Navbar = ({ sections }) => {
   const { handleSidebarClose, menu, menuRef, handleSidebarOpen } =
     useSidebarAnimation();
   const [scrolled, setScrolled] = useState(false);
+  const sectionIds = menuOptions.map((item) => item.id);
+  const activeSection = useActiveSection(sectionIds);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id) => {
-    if (id && sections[id].current) {
-      sections[id].current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    sections[id]?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     handleSidebarClose();
   };
 
   return (
     <>
-      <div className="navContainer">
-        <div className={`navbar ${scrolled ? "scrolled" : ""}`}>
-          <div className="navLogo">
-            <RxHamburgerMenu onClick={handleSidebarOpen} className="navMenu" />
-            <p className="logo">Ashar</p>
-          </div>
-          <ul className="navList">
-            {menuOptions.map((menuItem, index) => (
-              <li key={index} onClick={() => scrollToSection(menuItem.id)}>
-                {menuItem.name}
+      <header className="nav-container">
+        <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
+          <button
+            className="navbar__menu-btn"
+            onClick={handleSidebarOpen}
+            aria-label="Open menu"
+          >
+            <RxHamburgerMenu />
+          </button>
+
+          <button
+            className="navbar__logo"
+            onClick={() => scrollToSection("home")}
+          >
+            {siteConfig.shortName}
+            <span className="navbar__logo-dot">.</span>
+          </button>
+
+          <ul className="navbar__links">
+            {menuOptions.map((item) => (
+              <li key={item.id}>
+                <button
+                  className={`navbar__link ${activeSection === item.id ? "navbar__link--active" : ""}`}
+                  onClick={() => scrollToSection(item.id)}
+                >
+                  {item.name}
+                  {activeSection === item.id && (
+                    <motion.span
+                      className="navbar__link-indicator"
+                      layoutId="navIndicator"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </button>
               </li>
             ))}
           </ul>
+
           <button
-            className="navButton"
+            className="btn btn--primary navbar__cta"
             onClick={() => scrollToSection("contact")}
           >
-            Connect With Me
+            Hire Me
           </button>
-        </div>
-      </div>
+        </nav>
+      </header>
 
-      {menu && (
-        <>
-          <Sidebar
-            menuRef={menuRef}
-            handleSidebarClose={handleSidebarClose}
-            sections={sections}
-          />
-          <div className="overlay" onClick={handleSidebarClose}></div>
-        </>
-      )}
+      <AnimatePresence>
+        {menu && (
+          <>
+            <Sidebar
+              menuRef={menuRef}
+              handleSidebarClose={handleSidebarClose}
+              sections={sections}
+              activeSection={activeSection}
+            />
+            <motion.div
+              className="navbar__overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={handleSidebarClose}
+            />
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 };

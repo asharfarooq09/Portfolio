@@ -1,16 +1,51 @@
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+.app__bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.app__bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  background: var(--accent);
+  opacity: 0.06;
+}
+
+.app__bg-orb--1 {
+  width: 600px;
+  height: 600px;
+  top: -15%;
+  right: -10%;
+}
+
+.app__bg-orb--2 {
+  width: 500px;
+  height: 500px;
+  bottom: 10%;
+  left: -15%;
+  opacity: 0.04;
+}
+
 .container {
   display: flex;
   width: 100%;
-  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
   align-items: center;
   flex-direction: column;
-  gap: 80px;
+  gap: var(--section-gap);
+  padding-bottom: 2rem;
 }
 
-#home,
-#about,
-#services,
-#portfolio,
-#contact {
-  scroll-margin-top: 80px;
+.section {
+  width: var(--container);
+  scroll-margin-top: var(--nav-height);
 }

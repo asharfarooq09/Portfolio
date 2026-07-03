@@ -1,31 +1,17 @@
-import React from "react";
+import SectionTitle from "../common/SectionTitle";
 import ServiceCard from "../serviceCard/ServiceCard";
-import theme from "../../assets/theme_pattern.svg";
+import { services } from "./constant";
 import "./Services.css";
 
-const Services = () => {
-  return (
-    <div className="service">
-      <div className="serviceTitle">
-        <h2>My Services</h2>
-        <img src={theme} alt="" />
-      </div>
-      <div className="serviceProvide">
-        {[
-          "Web Design",
-          "Web Development",
-          "E-commerce Development",
-          "API Development & Integration",
-          "SEO & Performance Optimization",
-          "UI/UX Design Implementation",
-          "Website Maintenance",
-          "App Design",
-        ].map((title, index) => {
-          return <ServiceCard key={index} title={title} index={index} />;
-        })}
-      </div>
+const Services = () => (
+  <div className="services">
+    <SectionTitle subtitle="What I do">Expertise</SectionTitle>
+    <div className="services__grid">
+      {services.map((service, index) => (
+        <ServiceCard key={service.title} service={service} index={index} />
+      ))}
     </div>
-  );
-};
+  </div>
+);
 
 export default Services;

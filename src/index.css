@@ -1,13 +1,114 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rubik+Vinyl&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap");
 
-* {
+:root {
+  --bg-primary: #0f0f10;
+  --bg-secondary: #161618;
+  --bg-elevated: #1c1c1f;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-hover: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(91, 141, 239, 0.35);
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --accent: #5b8def;
+  --accent-muted: rgba(91, 141, 239, 0.12);
+  --shadow-glow: 0 0 48px rgba(91, 141, 239, 0.1);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --container: min(1140px, 90vw);
+  --nav-height: 72px;
+  --section-gap: 7.5rem;
+  --transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  font-family: "Outfit", system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(91, 141, 239, 0.35);
   color: #fff;
-  background: #161513;
-  font-family: "Outfit";
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  border: none;
+  outline: none;
+  transition: transform var(--transition), box-shadow var(--transition),
+    opacity var(--transition), background var(--transition);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn--primary {
+  color: #fff;
+  background: var(--accent);
+  box-shadow: 0 1px 4px rgba(91, 141, 239, 0.15);
+}
+
+.btn--primary:hover {
+  background: #4a7de0;
+  box-shadow: 0 2px 8px rgba(91, 141, 239, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn--outline {
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border);
+}
+
+.btn--outline:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
 }
