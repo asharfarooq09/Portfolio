@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import "./Hero.css";
-import Profile_image from "../../assets/Portfolio_image.jpeg";
+import Profile_image from "../../assets/Portfolio_image.png";
 import { siteConfig } from "../../data/site";
 
 const RESUME_URL = "/Ashar_Resume.pdf";
@@ -45,7 +45,7 @@ const Hero = ({ sections }) => {
           </motion.h1>
 
           <motion.p className="hero__subtitle" variants={fadeUp} initial="hidden" animate="visible" custom={1}>
-            {siteConfig.role} (Frontend) — {siteConfig.location}
+            {siteConfig.role} — {siteConfig.location}
           </motion.p>
 
           <motion.p

@@ -9,7 +9,7 @@ export const siteConfig = {
   tagline:
     "Building scalable design systems, reusable component libraries, and production-ready interfaces with React, TypeScript, and Storybook.",
   summary:
-    "Software Development Engineer I (Frontend) with experience building scalable design systems, reusable component libraries, and modern web applications using React, TypeScript, Node.js, and Storybook. Passionate about accessibility, performance optimization, and delivering maintainable, production-ready user interfaces.",
+    "Software Development Engineer I with experience building scalable design systems, reusable component libraries, and modern web applications using React, TypeScript, Node.js, and Storybook. Passionate about accessibility, performance optimization, and delivering maintainable, production-ready user interfaces.",
   bio: [
     "I'm a Software Development Engineer I at Uzence Design Studio, where I build reusable React/TypeScript components, design system infrastructure, and tooling that improves developer workflows and documentation.",
     "Previously, I interned as a Frontend Developer — developing Storybook components, design tokens, and internal NPM packages. I'm passionate about accessibility (WCAG), performance optimization, and delivering maintainable UI at scale.",

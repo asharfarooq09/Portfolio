@@ -30,7 +30,7 @@ const bullet = (text) => {
 // Header
 doc.font("Helvetica-Bold").fontSize(22).fillColor(accent).text("ASHAR FAROOQ");
 doc.moveDown(0.2);
-doc.font("Helvetica").fontSize(12).fillColor(muted).text("Software Development Engineer I (Frontend)");
+doc.font("Helvetica").fontSize(12).fillColor(muted).text("Software Development Engineer I");
 doc.moveDown(0.3);
 doc.font("Helvetica").fontSize(9).fillColor(muted).text(
   "+91 7599942225  |  farooqashar09@gmail.com  |  github.com/asharfarooq09  |  linkedin.com/in/ashar-farooq-6543b830b"
@@ -38,7 +38,7 @@ doc.font("Helvetica").fontSize(9).fillColor(muted).text(
 
 heading("Summary");
 body(
-  "Software Development Engineer I (Frontend) with experience building scalable design systems, reusable component libraries, and modern web applications using React, TypeScript, Node.js, and Storybook. Passionate about accessibility, performance optimization, and delivering maintainable, production-ready user interfaces."
+  "Software Development Engineer I with experience building scalable design systems, reusable component libraries, and modern web applications using React, TypeScript, Node.js, and Storybook. Passionate about accessibility, performance optimization, and delivering maintainable, production-ready user interfaces."
 );
 
 heading("Experience");

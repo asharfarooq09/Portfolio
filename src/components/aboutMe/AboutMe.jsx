@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Portfolio_image from "../../assets/Portfolio_image.jpeg";
+import Portfolio_image from "../../assets/Portfolio_image.png";
 import SectionTitle from "../common/SectionTitle";
 import AnimatedSection from "../common/AnimatedSection";
 import { siteConfig } from "../../data/site";
