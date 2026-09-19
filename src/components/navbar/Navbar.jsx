@@ -70,7 +70,7 @@ const Navbar = ({ sections }) => {
             className="btn btn--primary navbar__cta"
             onClick={() => scrollToSection("contact")}
           >
-            Hire Me
+            Contact Me
           </button>
         </nav>
       </header>

@@ -2,41 +2,41 @@ export const services = [
   {
     title: "Design Systems",
     description:
-      "Building scalable design system infrastructure with reusable components, design tokens, and consistent UI patterns.",
+      "Building scalable design systems with reusable components, design tokens, utilities, and consistent UI architecture.",
+  },
+  {
+    title: "UI Framework Engineering",
+    description:
+      "Building and maintaining UI frameworks from the ground up, including styling infrastructure, utilities, theming, and build-time tooling.",
   },
   {
     title: "Component Libraries",
     description:
-      "Developing production-ready React/TypeScript component libraries with Storybook documentation and testing.",
+      "Developing production-ready React/TypeScript components with flexible APIs, variants, accessibility, and reusable architecture.",
   },
   {
-    title: "Storybook & DX",
+    title: "Developer Experience",
     description:
-      "Creating interactive Storybook examples, component documentation, and developer workflows that improve team velocity.",
+      "Creating Storybook documentation, interactive examples, CLI tooling, and developer workflows that make UI development faster and more consistent.",
   },
   {
-    title: "Package Publishing",
+    title: "Package Engineering",
     description:
-      "Publishing and maintaining reusable NPM packages for internal UI libraries using Vite, Rollup, and monorepo tooling.",
+      "Building, publishing, and maintaining reusable NPM packages with Rollup, Vite, monorepo tooling, and package-level integration.",
   },
   {
-    title: "Performance Optimization",
+    title: "Performance Engineering",
     description:
-      "Improving load times, bundle size, and rendering performance through code splitting, lazy loading, and profiling.",
+      "Improving bundle size, load times, rendering performance, asset delivery, and build workflows through profiling and targeted optimization.",
   },
   {
-    title: "Accessibility",
+    title: "Documentation Platforms",
     description:
-      "Implementing WCAG-compliant interfaces with semantic HTML, keyboard navigation, and inclusive design practices.",
+      "Building developer-focused documentation platforms with component references, interactive playgrounds, examples, and API documentation.",
   },
   {
-    title: "API Integration",
+    title: "Testing & Quality",
     description:
-      "Connecting frontends to REST APIs with Node.js, handling async data flows, and robust error handling.",
-  },
-  {
-    title: "Visual Regression Testing",
-    description:
-      "Setting up component testing and visual regression workflows to ensure UI consistency across releases.",
+      "Implementing component testing, visual regression workflows, accessibility checks, and release validation to maintain UI quality across releases.",
   },
 ];

@@ -11,7 +11,7 @@ const ServiceCard = ({ index, service }) => (
     transition={{ delay: index * 0.06, duration: 0.5 }}
     whileHover={{ y: -6 }}
   >
-    <span className="service-card__index">0{index + 1}</span>
+    <span className="service-card__index">{String(index + 1).padStart(2, "0")}</span>
     <h3 className="service-card__title">{service.title}</h3>
     <p className="service-card__desc">{service.description}</p>
     <div className="service-card__link">
